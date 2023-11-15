@@ -7,8 +7,8 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     document.getElementById('deadlineError').textContent = '';
 
     // Get form inputs
-    var taskInput = document.getElementById('task');
-    var deadlineInput = document.getElementById('deadline');
+    const taskInput = document.getElementById('task');
+    const deadlineInput = document.getElementById('deadline');
 
     // Validate inputs
     if (taskInput.value.trim() === '') {
@@ -21,7 +21,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     }
 
     // If all validations pass, create an object with the form data
-    var formData = {
+    const formData = {
         task: taskInput.value,
         deadline: deadlineInput.value
     };
@@ -140,8 +140,8 @@ function fetchTasks(page, size) {
                         <td>${task.task}</td>
                         <td class="text-center">${formatDateTime(task.deadline)}</td>
                         <td class="text-center">
-                           <i class="icon-btn bi bi-pen" onclick="openEditModal(${task.id})">
-                           <i class="icon-btn bi bi-trash" onclick="deleteTask(${task.id})">
+                        <button type="button" class="btn" onclick="openEditModal(${task.id})"><span class="bi bi-pen"></span></button>
+                        <button type="button" class="btn" onclick="deleteTask(${task.id})"><span class="bi bi-trash"></span></button>
                         </td>
                     `;
                 tableBody.appendChild(row);
@@ -197,3 +197,29 @@ function formatDateTime(dateTimeString) {
     const formattedDateTime = new Date(dateTimeString).toLocaleString(undefined, options);
     return formattedDateTime.replace(',', ''); // Remove the comma from the default date format
 }
+
+function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var day = now.getDate();
+    var month = now.toLocaleString('default', { month: 'short' });
+    var year = now.getFullYear();
+
+    // Форматирование времени
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    var timeString = hours + '<span id="colon">:</span>' + minutes;
+    var dateString = day + ' ' + month + ' ' + year;
+
+    // Обновление содержимого элементов с идентификаторами "clock" и "date"
+    document.getElementById('clock').innerHTML = timeString;
+    document.getElementById('date').textContent = dateString;
+}
+
+// Вызывайте функцию updateClock каждую секунду
+setInterval(updateClock, 1000);
+
+// Вызовите updateClock сразу после загрузки страницы, чтобы избежать задержки
+updateClock();

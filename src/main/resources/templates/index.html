@@ -8,15 +8,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 
     <title>Todo list</title>
 </head>
 <body>
 <header class="header mt-5 text-center position-relative">
-    <div class="text-container position-relative d-flex flex-column justify-content-center align-items-center">
-        <h5 class="text-danger fs-3 fw-bold">Todo list</h5>
+    <div class="text-container d-flex justify-content-between align-items-center">
+        <div class="text-white text-opacity-75 ms-5" id="clock" style="font-family: 'Bruno Ace', cursive;"></div>
+        <div class="text-container position-relative d-flex flex-column justify-content-center align-items-center">
+            <h5 class="text-danger fs-3 fw-bold" style="font-family: 'Bungee Spice', cursive;">Todo list</h5>
+        </div>
+        <div class="date text-white text-opacity-75 me-5" id="date"></div>
     </div>
 </header>
 
@@ -32,7 +39,7 @@
                 <small class="text-danger" id="deadlineError"></small>
             </div>
             <div class="col-2 col-sm-2 col-md-1">
-                <button class="btn btn-primary w-100 fw-bolder" id="submitBtn" type="button">+</button>
+                <button class="add btn" id="submitBtn" type="button"><span class="bi bi-plus-lg"></span></button>
             </div>
         </div>
     </form>

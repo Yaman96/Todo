@@ -33,3 +33,39 @@ body {
     background-color: #4C6560; /* Change to your desired background color for disabled links */
     border-color: #4C6560; /* Change to your desired border color for disabled links */
 }
+
+.btn span.bi {
+    color: white;
+    opacity: 75%;
+}
+
+.add {
+    color: #ffffff; /* Change to your desired text color */
+    background-color: #21332F; /* Change to your desired background color */
+    border-color: #21332F; /* Change to your desired border color */
+}
+
+.add:hover {
+    color: #ffffff; /* Change to your desired text color on hover */
+    background-color: #2C443F; /* Change to your desired background color on hover */
+    border-color: #2C443F; /* Change to your desired border color on hover */
+}
+
+.text-danger {
+    font-family: 'Tektur', sans-serif;
+    font-size: small; /* Adjust the font size as needed */
+    color: #B92500;
+}
+
+@keyframes pulsate {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+#colon {
+    animation: pulsate 1s infinite; /* Pulsating animation every second */
+}
