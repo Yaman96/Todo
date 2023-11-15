@@ -6,3 +6,30 @@ body {
     background-color: #324D47;
     border-radius: 40px;
 }
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Adjust the size as needed */
+    padding: 0; /* Remove padding if not needed */
+    margin: 0; /* Remove margin if not needed */
+}
+
+.custom-pagination .page-link {
+    color: #ffffff; /* Change to your desired text color */
+    background-color: #21332F; /* Change to your desired background color */
+    border-color: #21332F; /* Change to your desired border color */
+}
+
+.custom-pagination .page-link:hover {
+    color: #ffffff; /* Change to your desired text color on hover */
+    background-color: #2C443F; /* Change to your desired background color on hover */
+    border-color: #2C443F; /* Change to your desired border color on hover */
+}
+
+.custom-pagination .page-item.disabled .page-link {
+    color: #868e96; /* Change to your desired text color for disabled links */
+    background-color: #4C6560; /* Change to your desired background color for disabled links */
+    border-color: #4C6560; /* Change to your desired border color for disabled links */
+}
